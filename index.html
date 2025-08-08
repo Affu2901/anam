@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy 1 Month 💕</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #ffe6eb, #ffd6e0);
+        font-family: 'Comic Sans MS', cursive;
+        text-align: center;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    h1 {
+        margin-top: 60px;
+        font-size: 3em;
+        color: #ff4d88;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    .wish {
+        font-size: 1.5em;
+        color: #cc3366;
+        opacity: 0;
+        animation: fadeIn 2s ease-in-out forwards;
+        margin-bottom: 20px; /* Adds spacing between wishes */
+    }
+
+    .cake {
+        font-size: 10em;
+        margin-top: 20px;
+        opacity: 0;
+        animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    .msg {
+    max-width: 80%; /* keeps it away from edges */
+    margin: 30px auto; /* centers it horizontally and adds top/bottom space */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* soft white background */
+    border-radius: 15px;
+    font-size: 1.2em;
+    color: #993366;
+    line-height: 1.6;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Falling Petals */
+    .petal {
+        position: absolute;
+        top: -50px;
+        font-size: 24px;
+        animation: fall linear infinite;
+        opacity: 0.9;
+        pointer-events: none;
+    }
+
+    @keyframes fall {
+        to {
+            transform: translateY(110vh) rotate(360deg);
+        }
+    }
+
+    /* Floating Hearts on Click */
+    .heart {
+        position: absolute;
+        font-size: 24px;
+        color: #ff4d88;
+        animation: floatUp 1.5s ease-out forwards;
+        pointer-events: none;
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(-100px); opacity: 0; }
+    }
+</style>
+</head>
+<body>
+
+<h1>💖 Happy 1 Month, My Love 💖</h1>
+<div id="wishes">
+    <div class="wish" style="animation-delay: 1s;">🌸 You make my days brighter.</div>
+    <div class="wish" style="animation-delay: 3s;">💗 Every moment with you feels magical.</div>
+    <div class="wish" style="animation-delay: 5s;">🌷 Here’s to many more months together.</div>
+    <div class="cake" style="animation-delay: 7s;">🎂</div>
+    <div class="msg" style="animation-delay: 9s;">I wish we didn't fight on this day but please forget about the fight and only think of our good memories 'The First date'. You were looking so cute and pretty, you made me feel special and I will never forget the flowers and choclate you bought for me. The bowling was so so romantic, I loved checking you out and I loved your embarassed smile when you played bad. Then the drinking and talking was so hot, I saw your prettiest hands and your cute laughs. Then the kiss in the car was so so so yummy, you tasted so good and I loved kissing you. I am so happy that you are mine and that I get to experience your love. Thank you baby for everything 🫶</div>
+    
+</div>
+
+<script>
+// Falling petals generator
+function createPetal() {
+    const petal = document.createElement('div');
+    petal.classList.add('petal');
+    petal.textContent = '🌸';
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.animationDuration = (Math.random() * 5 + 5) + 's';
+    petal.style.fontSize = (Math.random() * 10 + 20) + 'px';
+    document.body.appendChild(petal);
+
+    setTimeout(() => { petal.remove(); }, 10000);
+}
+setInterval(createPetal, 300);
+
+// Floating hearts on click
+document.addEventListener('click', (e) => {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = e.clientX + 'px';
+    heart.style.top = e.clientY + 'px';
+    heart.textContent = '💖';
+    document.body.appendChild(heart);
+    setTimeout(() => { heart.remove(); }, 1500);
+});
+</script>
+
+</body>
+</html>
